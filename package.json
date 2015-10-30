@@ -1,0 +1,14 @@
+{
+  "name": "angular-carousel-directive",
+  "version": "1.0.0",
+  "description": "Creating an animating, responsive, configurable loop carousel and wrapping it with AngularJS directive. ",
+  "authors": [
+    "Ivan Dobrovolsky"
+  ],
+  "dependencies": {
+    "angular": "latest",
+    "angular-touch": "latest",
+    "normalize.css": "^3.0.3"
+  },
+  "devDependencies": {}
+}
