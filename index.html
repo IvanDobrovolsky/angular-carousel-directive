@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
 
+    <title>Angular carousel directive project</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/stylesheets/normalize.css"/>
+    <link rel="stylesheet" href="assets/stylesheets/carousel.css"/>
+    <link rel="stylesheet" href="assets/stylesheets/app.css"/>
+
+
+    <!-- Library scripts -->
+    <script src="assets/scripts/angular.min.js"></script>
+    <script src="assets/scripts/angular-touch.min.js"></script>
+
+
+    <!-- Application and Carousel scripts-->
+    <script src="app/app.module.js"></script>
+    <script src="app/app.controller.js"></script>
+    <script src="app/carousel/carousel.module.js"></script>
+    <script src="app/carousel/carousel.controller.js"></script>
+    <script src="app/carousel/carousel.directive.js"></script>
+
+</head>
+<body ng-app="carouselApp">
+<div>
+    <p>Angular carousel directive project</p>
+</div>
+<div ng-controller="AppController as vm">
+    <carousel slides="vm.slides1" delay="1000"></carousel>
+    <carousel slides="vm.slides2"></carousel>
+</div>
 </body>
 </html>
