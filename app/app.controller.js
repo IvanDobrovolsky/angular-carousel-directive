@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    angular.module('carouselTestApp')
+    angular.module('carouselApp')
         .controller("AppController", [AppController]);
 
     function AppController(){

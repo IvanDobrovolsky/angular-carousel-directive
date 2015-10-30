@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<!-- Angular js directive -->
+<div class="carousel">
+    <div class="arrow prev" ng-click="vm.switchSlide('left')">&#10096;</div>
+    <div class="wrapper">
+        <ul class="slides is-set"
+            ng-swipe-left="vm.switchSlide('right')"
+            ng-swipe-right="vm.switchSlide('left')">
+            <li class="slide"
+                ng-class="{'is-running': $last}"
+                ng-repeat="slide in vm.slides"
+                    ><img draggable="false" ng-src="{{slide}}"></li>
+        </ul>
+    </div>
+    <div class="arrow next" ng-click="vm.switchSlide('right')">&#10095;</div>
+</div>
