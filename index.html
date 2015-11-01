@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <title>Angular carousel directive project</title>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/stylesheets/normalize.css"/>
     <link rel="stylesheet" href="assets/stylesheets/carousel.css"/>
     <link rel="stylesheet" href="assets/stylesheets/app.css"/>
 
@@ -22,15 +20,36 @@
     <script src="app/carousel/carousel.module.js"></script>
     <script src="app/carousel/carousel.controller.js"></script>
     <script src="app/carousel/carousel.directive.js"></script>
-
 </head>
+
+
 <body ng-app="carouselApp">
-<div>
-    <p>Angular carousel directive project</p>
-</div>
+
+<header>
+    <img draggable="false" src="http://photos2.meetupstatic.com/photos/event/b/5/6/0/global_341146432.jpeg" class="logo"/>
+    <h1 class="title">AngularJS carousel directive assignment</h1>
+</header>
+
+
+
+<!-- Main Application Controller -->
 <div ng-controller="AppController as vm">
-    <carousel slides="vm.slides1" delay="1000"></carousel>
-    <carousel slides="vm.slides2"></carousel>
+    <!-- carousel custom directive.
+     Configuration:
+        delay - auto play time delay,
+        slides - data for rendering images -->
+
+    <!-- using custom set of images 1-->
+    <carousel slides="vm.slides1" delay="400"></carousel>
+
+    <!-- using custom set of images 2-->
+    <carousel slides="vm.slides2" ></carousel>
 </div>
+
+
+<footer>
+    <img draggable="false" class="logo" src="https://pbs.twimg.com/profile_images/535054942264762369/IyLyofFa.png"/>
+    <h1 class="title">Developed by <a href="http://geekid.com.ua">Ivan Dobrovolskyi</a> for <a href="https://www.levi9.com/">Levi9 Ukraine</a></h1>
+</footer>
 </body>
 </html>

@@ -1,6 +1,7 @@
 (function () {
     "use strict";
 
+    //Registering CarouselController with carousel module
     angular.module('carousel').controller('CarouselController', ['$element', '$interval',   CarouselController]);
 
     function CarouselController($element, $interval) {
@@ -9,7 +10,7 @@
 
         var elementNode = $element[0];
 
-
+        //Implementing the delay feature
         if(vm.delay){
             $interval(function () {
                 switchSlide('right');
@@ -18,6 +19,7 @@
 
         vm.switchSlide = switchSlide;
 
+        //Function which takes a node and a node lists and returns a next element which goes after the node of the node list
         function getNext(slide, slides){
             var nextSlide, n = slides.length;
 
@@ -33,6 +35,7 @@
             return nextSlide;
         }
 
+        //Function which takes a node and a node lists and returns a previous element which goes before the node of the node list
         function getPrevious(slide, slides){
             var previousSlide, n = slides.length;
 
@@ -48,15 +51,17 @@
             return previousSlide;
         }
 
+        //Animating function
         function animate(carousel){
-            carousel.classList.remove('is-set');
+            carousel.classList.remove('transitioned');
             setTimeout(function () {
-                carousel.classList.add('is-set');
+                carousel.classList.add('transitioned');
             }, 50);
         }
 
+        //Reordering function
         function reorder(slides, newSlide){
-            newSlide.classList.add('is-running');
+            newSlide.classList.add('marker');
             newSlide.style.order = 1;
 
             for(var i = 1; i < slides.length; i++){
@@ -65,22 +70,23 @@
             }
         }
 
+        //Function which switches slides in either right or left directions
         function switchSlide(direction){
 
             var slides = Array.prototype.slice.call(elementNode.getElementsByClassName('slide')),
                 slidesContainer = elementNode.querySelector('.slides'),
-                currentReference = elementNode.querySelector('.is-running'),
+                currentReference = elementNode.querySelector('.marker'),
                 newSlide;
 
 
-            currentReference.classList.remove('is-running');
+            currentReference.classList.remove('marker');
 
             if(direction === 'right'){
                 newSlide = getNext(currentReference, slides);
-                slidesContainer.classList.remove('is-reversing');
+                slidesContainer.classList.remove('reversed');
             }else if (direction === 'left'){
                 newSlide = getPrevious(currentReference, slides);
-                slidesContainer.classList.add('is-reversing');
+                slidesContainer.classList.add('reversed');
             }
             reorder(slides, newSlide);
             animate(slidesContainer);
