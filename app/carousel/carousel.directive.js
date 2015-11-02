@@ -9,10 +9,10 @@
                 templateUrl: 'app/carousel/carousel.template.html', //carousel template url
                 controller: 'CarouselController as vm',
                 scope: {                                            //carousel attributes
-                    slides: '=',                                    //slides - set of image urls defined in AppController
-                    delay: '@'                                      //delay - auto-play time delay
+                    slides: '=',                                        //slides - set of image urls defined in AppController
+                    delay: '@'                                          //delay - auto-play time delay
                 },
-                bindToController: true                               //Binding to each directive to isolate controller
+                bindToController: true                               //Binding each directive to isolated controller
             };
         })
 }());
