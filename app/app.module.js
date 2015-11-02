@@ -2,6 +2,6 @@
     "use strict";
 
     //Defining carouselApp module
-    var carousel = angular.module('carouselApp', ["carousel"]);
+    var app = angular.module('carouselApp', ["carousel"]);
 
 }());
